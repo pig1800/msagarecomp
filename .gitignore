@@ -1,0 +1,51 @@
+# Local static-recompiler output (deterministic, regenerated from local disc ELF)
+generated/
+
+# Local runtime disc data & binary assets (never committed)
+runtime_data/
+orgdata/
+*.iso
+*.ISO
+*.bin
+*.BIN
+*.elf
+*.ELF
+*.irx
+*.IRX
+*.sda
+*.SDA
+
+# Ghidra / binary analysis scratch & caches
+ghidra_project/
+*.gpr
+*.gzf
+*.rep/
+analysis_cache/
+analysis_ghidra/
+analysis_ghidra_refined/
+analysis_out/
+tools/*
+!tools/export_config.py
+!tools/smoke_trace.py
+AGY_BOOK.md
+PROJECT_EXECUTION.md
+PROJECT_EXECUTION_REPORT.md
+HANDOFF_OPENCODE_DS.md
+
+# Build outputs & tool artifacts
+build/
+out/
+PS2Recomp/out/
+PS2Recomp/build/
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.exp
+__pycache__/
+*.pyc
+.vs/
+.vscode/
+compile_commands.json

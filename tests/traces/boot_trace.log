@@ -1,0 +1,62 @@
+# ps2xRuntime Deterministic Boot Smoke Trace
+# executable: build/runtime/ps2_host_runtime.exe
+# target_elf: runtime_data/SLPM_742.26
+# timeout_s: 5.0
+# elapsed_s: 5.22
+# outcome: timeout_bounded_stop
+# raw_lines: 54, compacted_lines: 54
+# ------------------------------------------------------------
+Using argv boot path
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 2560 x 1440
+INFO:     > Screen size:  640 x 448
+INFO:     > Render size:  640 x 448
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 404
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA GeForce RTX 4070 Ti SUPER/PCIe/SSE2
+INFO:     > Version:  3.3.0 NVIDIA 610.88
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - Win32): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: I:\Recomps\metalsaga
+INFO: AUDIO: Device initialized successfully
+INFO:     > Backend:       miniaudio | WASAPI
+INFO:     > Format:        32-bit IEEE Floating Point -> 32-bit IEEE Floating Point
+INFO:     > Channels:      2 -> 2
+INFO:     > Sample rate:   48000 -> 48000
+INFO:     > Periods size:  1440
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+Loading segment: 0x100000 - 0x4beefc (filesz: 0x352598, memsz: 0x3beefc)
+Registered code region: 100000 - 452598[game_overrides] applying 'slpm_742_26_runtime_overrides'[overrides] Applying build-scoped ps2xRuntime bindings for SLPM_742.26 (entry=0x287250)
+[ps2_host_shims] Host compatibility runtime hooks ready.
+[game_overrides] applied 1 matching override(s).ELF file loaded successfully. Entry point: 0x287250Starting execution at address 0x287250INFO: TEXTURE: [ID 3] Texture loaded successfully (640x512 | R8G8B8A8 | 1 mipmaps)
+[SetupHeap] base=0x4beefc alignedBase=0x4bef00 size=0x1ffffff runtimeBase=0x4bef00 runtimeEnd=0x4bef00
+INFO: TEXTURE: [ID 4] Texture loaded successfully (512x128 | R8G8B8A8 | 1 mipmaps)
+[guest-branch:missing-target] kind=IndirectCall op=JALR source=0x287504 target=0x0 pc=0x0 ra=0x28750c sp=0x1fffed0 gp=0x458df0 a0=0x491440 a1=0x0 a2=0x200 a3=0x4bff30 s0=0x407e84 s1=0xc v0=0x0 v1=0x4bef0c a0Readable=yes a0[0]=0x0 a0[4]=0x0 a0[8]=0x0 a0[c]=0x0 s0Readable=yes s0[0]=0x0 s0[4]=0x0 s0[8]=0x0 s0[c]=0x0 recordReadable=no record[0]=0x0 record[4]=0x0 record[8]=0x0 record[c]=0x0 vtableReadable=no vtbl[0]=0x0 vtbl[4]=0x0 vtbl[8]=0x0 vtbl[c]=0x0 codeRegion=no policy=1 trace=0x3565c8 -> 0x3565a0 -> 0x2b6c60 -> 0x2b6a40 -> 0x3565a0 -> 0x3565c8 -> 0x3565a0 -> 0x3565c8 -> 0x3565a0 -> 0x3565c8 -> 0x3565a0 -> 0x2b6c60 -> 0x2b6e28 -> 0x3565a0 -> 0x356610 -> 0x356610 -> 0x2b6ef8 -> 0x2b6e28 -> 0x3565a0 -> 0x356610 -> 0x356610 -> 0x2b6ef8 -> 0x2bd5c0 -> 0x2bd090 -> 0x2bd168 -> 0x2bd718 -> 0x2bd168 -> 0x2a3f90 -> 0x2ba860 -> 0x2ba8f8 -> 0x32c5c8 -> 0x32c5c8 -> 0x32c5c8 -> 0x2b3c90 -> 0x2b6f88 -> 0x2b7060 -> 0x2b6f88 -> 0x2b7060 -> 0x2be0c0 -> 0x2be198 -> 0x2bdd90 -> 0x2bde68 -> 0x32e320 -> 0x32c5c8 -> 0x2af460 -> 0x32c5c8 -> 0x32c5c8 -> 0x2a9f70 -> 0x2af910 -> 0x2ab7f0 -> 0x2af490 -> 0x2af460 -> 0x32c5c8 -> 0x2af7f0 -> 0x2b3f98 -> 0x2af490 -> 0x32c5c8 -> 0x2b3f98 -> 0x2af490 -> 0x2af460 -> 0x32c5c8 -> 0x32c5c8 -> 0x2aaf70 -> 0x2abc68

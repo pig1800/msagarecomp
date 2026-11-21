@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./runtime_data/**)",
+      "Read(./orgdata/**)",
+      "Read(./ghidra_project/**)",
+      "Read(./analysis_ghidra/**)",
+      "Read(./analysis_ghidra_refined/**)",
+      "Read(./analysis_cache/**)",
+      "Read(./analysis_out/**)",
+      "Read(./tools/ghidra/**)",
+      "Read(./*.iso)",
+      "Read(./*.bin)",
+      "Read(./*.elf)",
+      "Read(./*.irx)"
+    ]
+  }
+}
