@@ -49,3 +49,4 @@ __pycache__/
 .vs/
 .vscode/
 compile_commands.json
+ps2_log.txt
