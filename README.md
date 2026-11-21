@@ -1,8 +1,15 @@
-# PS2 Emotion Engine Host Compatibility Runtime (`ps2xRuntime`)
+# PS2 Emotion Engine Native PC Host Runtime (`ps2xRuntime`)
 
-A **C++20 PlayStation 2 Emotion Engine (R5900), Graphics Synthesizer (GS), VIF1/VU1, and SPU2 host compatibility runtime** built on [`PS2Recomp`](PS2Recomp/) (`ps2xRuntime` + `ps2xIOP`).
+A **C++20 PlayStation 2 Emotion Engine (R5900), Graphics Synthesizer (GS), VIF1/VU1, and SPU2 host compatibility runtime** bootstrapped on [`PS2Recomp`](PS2Recomp/) (`ps2xRuntime` + `ps2xIOP`), targeting a **pure native PC executable**.
 
-## Architecture
+## Target Architecture & Roadmap
+
+- **Pure Native PC Executable (Primary Target):** Windows (x64) first, with clean OS abstraction boundaries for Linux/macOS (and leaving room for future ports like Android later without implementing them yet).
+- **Graphics:** Native **Vulkan** GS/VIF1/VU1 rendering backend (replacing the initial `raylib`/CPU-GS bring-up scaffold).
+- **Audio:** Native OS audio APIs (**WASAPI** on Windows, native OS audio backends on other desktop platforms) for low-latency SPU2/ADPCM playback.
+- **Input & Platform I/O:** Native PC controller/keyboard input, window/swapchain management, and host virtual filesystem/memory-card storage under `src/runtime/`.
+
+## Repository Layout
 
 - **`PS2Recomp/`** (submodule): Core static R5900-to-C++20 lifter (`ps2xRecomp`), EE/GS/VU1/SPU2 host runtime (`ps2xRuntime`), and virtual IOP/IRX execution engine (`ps2xIOP`).
 - **`src/runtime/` & `include/`**: Host-side C++20 compatibility shims, DMA/GIF/VIF1/GS helpers, SPU2 audio glue, and trace diagnostics.

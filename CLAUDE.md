@@ -2,12 +2,23 @@
 
 ## Workspace Scope & Identity
 
-This repository is a **C++20 PlayStation 2 Emotion Engine (R5900) / Graphics Synthesizer (GS) / VIF1 / VU1 / SPU2 host compatibility runtime** built on `ps2xRuntime` and `ps2xIOP`.
+This repository is a **C++20 PlayStation 2 Emotion Engine (R5900) / Graphics Synthesizer (GS) / VIF1 / VU1 / SPU2 host compatibility runtime** bootstrapped on `ps2xRuntime` and `ps2xIOP`.
+
+### Final Goal: Pure Native PC Executable
+The end goal is a **pure, standalone, high-performance native PC executable** (Windows primary, portable to Linux/macOS):
+- **Graphics Backend:** **Vulkan** native GPU-accelerated GS/VIF1/VU1 rendering pipeline (migrating away from the initial `raylib`/OpenGL CPU-rasterized `ps2xRuntime` bootstrap).
+- **Audio Backend:** **Native OS audio APIs** (**WASAPI** on Windows; native equivalents such as PipeWire/PulseAudio/ALSA on Linux and CoreAudio on macOS) for low-latency SPU2/ADPCM/streaming output.
+- **Platform / Input / Windowing:** Native PC windowing, swapchain presentation, gamepad/keyboard input, and host filesystem/save persistence behind clean C++20 platform interfaces under `src/runtime/`.
+- **Future Portability:** Keep OS/graphics/audio boundaries cleanly abstracted so future ports (such as Android) remain feasible later, **but omit non-PC port work for now** and focus strictly on native PC.
+
+### Engineering Progression
+1. **Stage 1 — Execution Bring-Up:** Use the compiling `ps2xRuntime` + `ps2xIOP` baseline to unblock cold boot, EE kernel syscalls, IOP RPCs, VFS/CDVD loading, and clean-room `src/overrides/` hooks.
+2. **Stage 2 — Native PC Architecture:** Introduce clean backend interfaces under `src/runtime/` and replace the temporary `raylib`/software-GS bootstrap with a **native Vulkan renderer**, **native WASAPI (Windows) / OS audio backend**, and native PC input/windowing for a pure native PC executable.
 
 Focus strictly on C++20 systems, hardware emulation, graphics, audio, and runtime compatibility engineering:
 - EE kernel syscalls, threading/semaphores/event flags, and HLE SDK shims (`src/runtime/`, `PS2Recomp/ps2xRuntime/`)
-- DMAC / GIF / VIF1 packet parsing, GS software/hardware rasterization, and VU1 microprogram execution
-- SPU2 / IOP RPC transport and virtual filesystem (`ps2_vfs`) compatibility
+- DMAC / GIF / VIF1 packet parsing, **Vulkan GS hardware rendering**, and VU1 microprogram execution
+- SPU2 mixing over **native OS audio APIs (WASAPI on Windows)**, IOP RPC transport, and virtual filesystem (`ps2_vfs`) compatibility
 - Clean-room C++20 function overrides under `src/overrides/` registered with `PS2_REGISTER_GAME_OVERRIDE`
 
 ## Hard Rules
